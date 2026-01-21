@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анна Арестова | Эксперт по личному бренду</title>
+    <meta name="description" content="5+ лет в продвижении экспертов. Помогла 200+ клиентам увеличить доход через личный бренд.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Анна Арестова | Эксперт по личному бренду">
+    <meta property="og:description" content="Помогаю экспертам стать узнаваемыми">
+    <meta property="og:type" content="website">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQW5uYSBBcmVzdG92YSIsInNob3J0X25hbWUiOiJBcmVzdG92YSIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMEExRDNGIiwidGhlbWVfY29sb3IiOiIjRkY2QjM1In0=">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0A1D3F',
+                        accent: '#FF6B35'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(255, 107, 53, 0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .parallax {
+            transition: transform 0.3s ease;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #0A1D3F 0%, #FF6B35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        /* Темная тема */
+        .dark {
+            background-color: #0A1D3F;
+            color: #ffffff;
+        }
+        
+        /* Loader */
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #FF6B35;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Progress bar */
+        .progress-bar {
+            transition: width 1s ease;
+        }
+        
+        /* Accordion */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="smooth-scroll transition-colors duration-300">
+    
+    <!-- Theme Toggle -->
+    <button id="themeToggle" class="fixed top-4 right-4 z-50 p-3 rounded-full bg-white dark:bg-gray-800 shadow-lg hover:scale-110 transition">
+        <svg class="w-6 h-6 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+        </svg>
+        <svg class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-gray-100 dark:from-primary dark:to-gray-900 px-4 py-20">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Profile Photo -->
+                <div class="fade-in-up flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-full blur opacity-75 animate-pulse"></div>
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop" 
+                             alt="Анна Арестова" 
+                             class="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl">
+                    </div>
+                </div>
+                
+                <!-- Profile Info -->
+                <div class="fade-in-up text-center md:text-left">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-4 gradient-text">Анна Арестова</h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-2">@nytaarest</p>
+                    <p class="text-2xl text-gray-700 dark:text-gray-200 mb-6">Эксперт по личному бренду</p>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-xl">
+                        5+ лет в продвижении экспертов. Помогла 200+ клиентам увеличить доход через личный бренд.
+                    </p>
+                    
+                    <button onclick="openModal('contact')" class="pulse-btn bg-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition transform hover:scale-105">
+                        Связаться со мной
+                    </button>
+                    
+                    <!-- Social Links -->
+                    <div class="flex justify-center md:justify-start gap-4 mt-8">
+                        <a href="#" onclick="trackClick('tg'); return false;" class="p-3 bg-white dark:bg-gray-800 rounded-full shadow hover:shadow-lg transition hover:-translate-y-1">
+                            <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                        </a>
+                        <a href="#" onclick="trackClick('ig'); return false;" class="p-3 bg-white dark:bg-gray-800 rounded-full shadow hover:shadow-lg transition hover:-translate-y-1">
+                            <svg class="w-6 h-6 text-pink-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" onclick="trackClick('youtube'); return false;" class="p-3 bg-white dark:bg-gray-800 rounded-full shadow hover:shadow-lg transition hover:-translate-y-1">
+                            <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="#" onclick="trackClick('linkedin'); return false;" class="p-3 bg-white dark:bg-gray-800 rounded-full shadow hover:shadow-lg transition hover:-translate-y-1">
+                            <svg class="w-6 h-6 text-blue-700" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Menu -->
+    <nav class="sticky top-0 z-40 bg-white dark:bg-gray-900 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center space-x-2 md:space-x-8 py-4 overflow-x-auto">
+                <a href="#services" class="nav-link px-4 py-2 rounded-lg hover:bg-accent hover:text-white transition">💼 Услуги</a>
+                <a href="#content" class="nav-link px-4 py-2 rounded-lg hover:bg-accent hover:text-white transition">📚 Контент</a>
+                <a href="#video" class="nav-link px-4 py-2 rounded-lg hover:bg-accent hover:text-white transition">🎥 Видео</a>
+                <a href="#book" class="nav-link px-4 py-2 rounded-lg hover:bg-accent hover:text-white transition">📖 Книга</a>
+                <a href="#reviews" class="nav-link px-4 py-2 rounded-lg hover:bg-accent hover:text-white transition">✨ Отзывы</a>
+                <a href="#faq" class="nav-link px-4 py-2 rounded-lg hover:bg-accent hover:text-white transition">❓ FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Мои услуги</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">💬</div>
+                    <h3 class="text-2xl font-bold mb-4">Консультации</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Индивидуальная стратегия развития личного бренда</p>
+                    <p class="text-3xl font-bold text-accent mb-4">от 15 000₽</p>
+                    <button onclick="redirectTo('consult')" class="w-full bg-primary dark:bg-accent text-white py-3 rounded-lg hover:opacity-90 transition">
+                        Записаться
+                    </button>
+                </div>
+                
+                <div class="card-hover bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">🎓</div>
+                    <h3 class="text-2xl font-bold mb-4">Курсы</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Пошаговая программа создания личного бренда</p>
+                    <p class="text-3xl font-bold text-accent mb-4">от 25 000₽</p>
+                    <button onclick="redirectTo('course')" class="w-full bg-primary dark:bg-accent text-white py-3 rounded-lg hover:opacity-90 transition">
+                        Подробнее
+                    </button>
+                </div>
+                
+                <div class="card-hover bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-bold mb-4">Воркшопы</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">Интенсивные практические занятия в группе</p>
+                    <p class="text-3xl font-bold text-accent mb-4">от 8 000₽</p>
+                    <button onclick="openModal('workshop')" class="w-full bg-primary dark:bg-accent text-white py-3 rounded-lg hover:opacity-90 transition">
+                        Узнать даты
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Projects -->
+    <section class="py-20 bg-white dark:bg-primary">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Актуальные проекты</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-800 dark:to-gray-900 p-8 rounded-2xl shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold">Курс "Личный бренд с нуля"</h3>
+                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm">Идёт набор</span>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">Старт: 15 февраля 2026</p>
+                    
+                    <div class="mb-4">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Заполнено мест</span>
+                            <span class="font-bold">18/25</span>
+                        </div>
+                        <div class="w-full bg-gray-300 rounded-full h-3">
+                            <div class="progress-bar bg-accent h-3 rounded-full" style="width: 72%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-lg mb-4">
+                        <p class="text-sm text-gray-600 dark:text-gray-400">До старта осталось:</p>
+                        <div id="timer1" class="text-2xl font-bold text-accent mt-2">25 дней</div>
+                    </div>
+                    
+                    <button onclick="redirectTo('course')" class="w-full bg-accent hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition">
+                        Забронировать место
+                    </button>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-800 dark:to-gray-900 p-8 rounded-2xl shadow-xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold">Книга "Digital-эксперт"</h3>
+                        <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">Доступна</span>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">Практическое руководство по созданию экспертности в онлайн</p>
+                    
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-lg mb-4">
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=120&h=160&fit=crop" 
+                                 alt="Обложка книги" 
+                                 class="w-20 h-28 object-cover rounded shadow-lg">
+                            <div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">250+ страниц практики</p>
+                                <p class="text-2xl font-bold text-primary dark:text-accent mt-2">990₽</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="redirectTo('book')" class="w-full bg-primary dark:bg-accent text-white py-3 rounded-lg font-semibold hover:opacity-90 transition">
+                        Купить книгу
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Последнее видео</h2>
+            
+            <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden">
+                <div class="aspect-video bg-gray-200 dark:bg-gray-700">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        class="w-full h-full">
+                    </iframe>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2">5 ошибок в продвижении личного бренда</h3>
+                    <div class="flex items-center gap-4 text-gray-600 dark:text-gray-400 mb-4">
+                        <span>📅 18 января 2026</span>
+                        <span>👁️ 15,234 просмотра</span>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">
+                        Разбираю самые частые ошибки экспертов при создании личного бренда и показываю, как их избежать.
+                    </p>
+                    <a href="https://youtube.com" target="_blank" class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg transition">
+                        Смотреть на YouTube
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-white dark:bg-primary">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Отзывы клиентов</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pravatar.cc/60?img=1" alt="Клиент" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-bold">Елена Смирнова</p>
+                            <p class="text-sm text-gray-500">Психолог</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-2">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        "Анна помогла мне выстроить стратегию продвижения. Количество заявок выросло в 3 раза за 2 месяца!"
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pravatar.cc/60?img=3" alt="Клиент" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-bold">Михаил Петров</p>
+                            <p class="text-sm text-gray-500">Бизнес-тренер</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-2">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        "Курс 'Личный бренд с нуля' - лучшее вложение в своё развитие. Всё четко, структурировано, с примерами."
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://i.pravatar.cc/60?img=5" alt="Клиент" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-bold">Ольга Иванова</p>
+                            <p class="text-sm text-gray-500">Нутрициолог</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-2">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        "Благодаря консультации с Анной я наконец поняла свою уникальность и научилась её транслировать!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Частые вопросы</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow">
+                    <button onclick="toggleAccordion(this)" class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+                        <span>Как проходят консультации?</span>
+                        <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 dark:text-gray-400">Консультации проходят онлайн в Zoom. Длительность 60-90 минут. После встречи вы получаете запись и подробный план действий.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow">
+                    <button onclick="toggleAccordion(this)" class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+                        <span>Сколько длится курс?</span>
+                        <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 dark:text-gray-400">Курс рассчитан на 8 недель. Каждую неделю открывается новый модуль с видеоуроками и практическими заданиями. Есть обратная связь от меня и кураторов.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-900 rounded-lg shadow">
+                    <button onclick="toggleAccordion(this)" class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+                        <span>Можно ли оплатить в рассрочку?</span>
+                        <svg class="w-6 h-6 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content px-6 pb-6">
+                        <p class="text-gray-600 dark:text-gray-400">Да, доступна рассрочка на 3-6 месяцев без переплаты. Детали уточняйте при записи.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-accent text-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-4xl font-bold mb-4">Подпишитесь на рассылку</h2>
+            <p class="text-xl mb-8 opacity-90">Получайте полезные материалы о личном бренде каждую неделю</p>
+            
+            <div class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+                <input type="email" placeholder="Ваш email" class="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
+                <button onclick="redirectTo('free')" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    Подписаться
+                </button>
+            </div>
+            
+            <p class="text-sm mt-4 opacity-75">Никакого спама. Только ценный контент.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary dark:bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Анна Арестова</h3>
+                    <p class="text-gray-300">Эксперт по личному бренду</p>
+                    <p class="text-gray-400 mt-2">hello@anna-arestova.ru</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Быстрые ссылки</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" onclick="redirectTo('course')" class="hover:text-accent transition">Курсы</a></li>
+                        <li><a href="#" onclick="redirectTo('book')" class="hover:text-accent transition">Книга</a></li>
+                        <li><a href="#" onclick="redirectTo('consult')" class="hover:text-accent transition">Консультация</a></li>
+                        <li><a href="#" onclick="copyLink()" class="hover:text-accent transition">Копировать ссылку на профиль</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Полезное</h4>
+                    <button onclick="downloadMediaKit()" class="bg-accent hover:bg-orange-600 text-white px-6 py-3 rounded-lg transition mb-4 block w-full">
+                        📄 Скачать медиа-кит
+                    </button>
+                    <p class="text-sm text-gray-400">PDF с информацией для партнёров и СМИ</p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Анна Арестова. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-900 rounded-2xl max-w-md w-full p-8 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            
+            <h3 class="text-2xl font-bold mb-4">Связаться со мной</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">Выберите удобный способ:</p>
+            
+            <div class="space-y-3">
+                <a href="https://t.me/nytaarest" target="_blank" class="block w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg text-center transition">
+                    Telegram
+                </a>
+                <a href="mailto:hello@anna-arestova.ru" class="block w-full bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg text-center transition">
+                    Email
+                </a>
+                <a href="https://wa.me/79001234567" target="_blank" class="block w-full bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg text-center transition">
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redirect Loader -->
+    <div id="redirectLoader" class="hidden fixed inset-0 bg-primary z-50 flex flex-col items-center justify-center">
+        <div class="text-center">
+            <div class="loader mx-auto mb-4"></div>
+            <p class="text-white text-xl">Переход по ссылке...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50">
+        Ссылка скопирована!
+    </div>
+
+    <script>
+        // Configuration - все ссылки в одном месте
+        const CONFIG = {
+            links: {
+                course: 'https://example.com/course',
+                book: 'https://example.com/book',
+                consult: 'https://calendly.com/anna-arestova',
+                tg: 'https://t.me/nytaarest',
+                ig: 'https://instagram.com/nytaarest',
+                youtube: 'https://youtube.com/@nytaarest',
+                linkedin: 'https://linkedin.com/in/anna-arestova',
+                free: 'https://example.com/free-guide'
+            },
+            email: 'hello@anna-arestova.ru',
+            phone: '+79001234567'
+        };
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        // Загрузка темы (в реальной версии используется localStorage)
+        let theme = 'light';
+        
+        themeToggle.addEventListener('click', () => {
+            theme = theme === 'light' ? 'dark' : 'light';
+            html.classList.toggle('dark');
+        });
+
+        // Modal
+        function openModal(type) {
+            document.getElementById('modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+
+        // Redirect with tracking
+        function redirectTo(destination) {
+            const url = CONFIG.links[destination];
+            if (!url) {
+                console.error('Link not found:', destination);
+                return;
+            }
+            
+            trackClick(destination);
+            
+            document.getElementById('redirectLoader').classList.remove('hidden');
+            
+            setTimeout(() => {
+                window.open(url, '_blank');
+                document.getElementById('redirectLoader').classList.add('hidden');
+            }, 1000);
+        }
+
+        // Click tracking (в реальной версии сохраняется в localStorage)
+        let clickStats = {};
+        
+        function trackClick(destination) {
+            if (!clickStats[destination]) {
+                clickStats[destination] = 0;
+            }
+            clickStats[destination]++;
+            console.log('Click tracked:', destination, clickStats[destination]);
+        }
+
+        // Copy link
+        function copyLink() {
+            const link = window.location.href;
+            navigator.clipboard.writeText(link).then(() => {
+                showToast('Ссылка скопирована!');
+            });
+        }
+
+        // Toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Download media kit
+        function downloadMediaKit() {
+            showToast('Загрузка медиа-кита...');
+            // В реальной версии здесь был бы реальный PDF
+            setTimeout(() => {
+                alert('В реальной версии здесь загружается PDF с медиа-китом');
+            }, 500);
+        }
+
+        // Accordion
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('svg');
+            
+            content.classList.toggle('active');
+            icon.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-hover').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Timer countdown
+        function updateTimer() {
+            const targetDate = new Date('2026-02-15').getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            
+            const timer = document.getElementById('timer1');
+            if (timer) {
+                timer.textContent = days + ' дней';
+            }
+        }
+        
+        updateTimer();
+        setInterval(updateTimer, 1000 * 60 * 60); // Обновление раз в час
+
+        // Parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const parallaxElements = document.querySelectorAll('.parallax');
+            parallaxElements.forEach(el => {
+                const speed = el.dataset.speed || 0.05;
+                const x = (window.innerWidth - e.pageX * speed) / 100;
+                const y = (window.innerHeight - e.pageY * speed) / 100;
+                el.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        });
+
+        console.log('🚀 Сайт загружен! Analytics:', clickStats);
+    </script>
+</body>
+</html>
